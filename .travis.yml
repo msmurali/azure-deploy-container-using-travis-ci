@@ -1,0 +1,8 @@
+services:
+    - docker
+    
+before_install:
+    - docker build -t msmurali/react-docker-app -f Dockerfile.dev
+    
+script:
+    - docker run msmurali/react-docker-app npm run test -- --coverage
